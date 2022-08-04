@@ -21,7 +21,7 @@ private WebElement loginButton;
 //Constructor
 
 public loginpage(WebDriver driver) {
-	PageFactory.initElements(driver, this);
+	PageFactory.initElements(driver,this);
 }
 //page methods
 public void enterUserName() {

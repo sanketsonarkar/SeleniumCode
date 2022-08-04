@@ -1,6 +1,7 @@
 package org.selectclass;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 import org.openqa.selenium.By;
@@ -19,12 +20,18 @@ public static void main (String[] args) {
 	WebElement colourDDL = driver.findElement(By.id("oldSelectMenu"));
 	Select sel = new Select(colourDDL);
 //	WebElement selectedoption = sel.getFirstSelectedOption();
-	System.out.println(sel.getFirstSelectedOption().getText());
-	sel.selectByVisibleText("Black");
-	List<WebElement> alloptions = sel.getOptions();
-	for(int i=0;i<alloptions.size();i++) {
-		System.out.println(alloptions.get(i).getText());
-	}
+//	System.out.println(sel.getFirstSelectedOption().getText());
+//	sel.selectByVisibleText("Black");
+	SelectClassEx2 obj = new SelectClassEx2 ();
+	
+	System.out.println(	obj.GetListFromSelect(colourDDL));
+	
+//	List<WebElement> alloptions = sel.getOptions();
+//
+//	for(int i=0;i<alloptions.size();i++) {
+//		System.out.println(alloptions.get(i).getText());
+//		
+//	}
 	
 	
 }
@@ -34,7 +41,8 @@ public static void main (String[] args) {
 		for(int i=0;i<sel.getOptions().size();i++) {
 			ar.add(sel.getOptions().get(i).getText());
 		}
-		
+		Collections.sort(ar);
+
 	return ar;}
 
 }

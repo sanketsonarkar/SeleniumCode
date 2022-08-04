@@ -38,6 +38,7 @@ public class BaseUtilities {
 			
 		driver.manage().window().maximize();
 		driver.get(url);
+		
 		return driver;
 	}
 
